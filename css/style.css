@@ -1,0 +1,25 @@
+body {
+}
+.App {
+  background-image: url(../assets/home.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  gap: 20px;
+  height: 100vh;
+  justify-content: space-between;
+  width: 100vw;
+}
+.difficulty {
+  border: 2px solid purple;
+  box-sizing: border-box;
+  color: purple;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  display: none;
+}
+.addList {
+  display: block;
+}
