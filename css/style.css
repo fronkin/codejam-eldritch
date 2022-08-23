@@ -20,6 +20,29 @@ body {
   text-align: center;
   display: none;
 }
+
+.shuffle-button {
+  background-color: red;
+  border: 2px solid purple;
+  color: purple;
+  cursor: pointer;
+  padding: 5px;
+  display: none;
+}
+.current-state {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 30%;
+  display: none;
+}
+.deck {
+  background-image: url(../assets/mythicCardBackground.png);
+  background-size: cover;
+  height: 190px;
+  width: 130px;
+  display: none;
+}
 .addList {
   display: block;
 }

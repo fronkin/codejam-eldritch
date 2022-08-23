@@ -14,7 +14,7 @@ function Ancients() {
 Ancients();
 const ancientCards = document.querySelectorAll(".ancient-card");
 function clik() {
-  ancientCards.forEach((card) => {
+  ancientCards.forEach((card, index) => {
     card.addEventListener("click", centr);
   });
 }
@@ -28,9 +28,8 @@ function centr() {
 }
 
 const deckContainers = document.querySelector(".deck-container");
-
+const shuffleButton = document.querySelector(".shuffle-button");
 function clikd() {
-  console.log(diffiCulty);
   diffiCulty.forEach((card) => {
     card.addEventListener("click", clikDeck);
   });
@@ -38,6 +37,16 @@ function clikd() {
 clikd();
 
 function clikDeck() {
-  console.log(diffiCulty);
-  deckContainers.innerHTML += `<span class="shuffle-button">Замешать колоду</span>`;
+  shuffleButton.classList.add("addList");
+}
+function clikSpan() {
+  shuffleButton.addEventListener("click", spanRemove);
+}
+clikSpan();
+const currentState = document.querySelector(".current-state");
+const deck = document.querySelector(".deck");
+function spanRemove() {
+  shuffleButton.classList.remove("addList");
+  currentState.classList.add("addList");
+  deck.classList.add("addList");
 }
