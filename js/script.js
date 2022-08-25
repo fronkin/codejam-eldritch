@@ -230,11 +230,13 @@ function deckClid() {
 }
 deckClid();
 function last() {
-  Lvl1.forEach((item) => {
+  Lvl1.forEach((item, index) => {
     lastCard.style.backgroundImage = `url(${item.src})`;
-
-    console.log(add);
+    lastCard.classList.add("addList");
+    // let add = Lvl1.pop();
+    console.log(Lvl1);
+    return;
   });
-  lastCard.classList.add("addList");
+
   console.log(Lvl1);
 }
