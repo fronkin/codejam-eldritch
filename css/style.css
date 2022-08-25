@@ -41,6 +41,12 @@
   width: 130px;
   display: none;
 }
+.last-card {
+  background-size: cover;
+  height: 190px;
+  width: 130px;
+  display: none;
+}
 .addList {
   display: block;
 }

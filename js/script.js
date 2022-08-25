@@ -7,6 +7,8 @@ const ancientsContainer = document.querySelector(".ancients-container");
 const Green = document.querySelectorAll(".green");
 const Brown = document.querySelectorAll(".brown");
 const Blue = document.querySelectorAll(".blue");
+const lastCard = document.querySelector(".last-card");
+
 let currCard = "";
 let textCentr = "";
 
@@ -133,14 +135,106 @@ let hardGreen = [];
 
 function levlCard() {
   if (textCentr === "Низкая") {
+    const shuffle = (arr) => arr.sort(() => 0.5 - Math.random());
     easyBlue = ancientsblue.filter((item) => item.complexity !== "hard");
+    shuffle(easyBlue);
     easyBrown = ancientsbrown.filter((item) => item.complexity !== "hard");
+    shuffle(easyBrown);
     easyGreen = ancientsgreen.filter((item) => item.complexity !== "hard");
+    shuffle(easyGreen);
     console.log(easyBrown);
+
+    shuffle(easyBrown);
   } else if (textCentr === "Высокая") {
+    const shuffle = (arr) => arr.sort(() => 0.5 - Math.random());
     hardBlue = ancientsblue.filter((item) => item.complexity !== "easy");
+    shuffle(hardBlue);
     hardBrown = ancientsbrown.filter((item) => item.complexity !== "easy");
+    shuffle(hardBrown);
     hardGreen = ancientsgreen.filter((item) => item.complexity !== "easy");
-    console.log(hardBrown);
+    shuffle(hardGreen);
   }
+  cardSort1();
+  cardSort2();
+  cardSort3();
+}
+let Lvl1 = [];
+let Lvl2 = [];
+let Lvl3 = [];
+
+function cardSort1() {
+  easyGreen.forEach((item, index) => {
+    if (index == 0) {
+      let add = item;
+      Lvl1.push(add);
+    }
+  });
+  easyBrown.forEach((item, index) => {
+    if (index < 2) {
+      let add = item;
+
+      Lvl1.push(add);
+    }
+  });
+  easyBlue.forEach((item, index) => {
+    if (index == 0) {
+      let add = item;
+
+      Lvl1.push(add);
+      // console.log(Lvl1);
+    }
+  });
+}
+function cardSort2() {
+  easyGreen.forEach((item, index) => {
+    if (index < 2) {
+      let add = item;
+      Lvl2.push(add);
+    }
+  });
+  easyBrown.forEach((item, index) => {
+    if (index < 3) {
+      let add = item;
+
+      Lvl2.push(add);
+    }
+  });
+  easyBlue.forEach((item, index) => {
+    if (index == 0) {
+      let add = item;
+
+      Lvl2.push(add);
+      // console.log(Lvl2);
+    }
+  });
+}
+function cardSort3() {
+  easyGreen.forEach((item, index) => {
+    if (index < 2) {
+      let add = item;
+      Lvl3.push(add);
+    }
+  });
+  easyBrown.forEach((item, index) => {
+    if (index < 4) {
+      let add = item;
+
+      Lvl3.push(add);
+    }
+  });
+  // console.log(Lvl3);
+}
+
+function deckClid() {
+  deck.addEventListener("click", last);
+}
+deckClid();
+function last() {
+  Lvl1.forEach((item) => {
+    lastCard.style.backgroundImage = `url(${item.src})`;
+
+    console.log(add);
+  });
+  lastCard.classList.add("addList");
+  console.log(Lvl1);
 }
